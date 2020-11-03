@@ -89,9 +89,36 @@ UI instructions only
 Refs
 https://github.com/cloudacademy/react-webapp
 
-Note: assumes yarn is installed on the server
+Notes: 
+* this demo assumes ```yarn``` (1.22.x) and ```node``` (8.x) have already been installed and is available on the host that the Jenkins service is running on.
+* ```node``` version 8.x is required for the ```yarn build``` to complete successfully
+
+### Install and Setup yarn and node locally (MacOS)
+
+If you are running Jenkins locally on MacOS then perform the following instructions to install ```yarn``` and ```node```
 
 ```
+brew install yarn
+yarn --version
+which yarn
+```
+
+```
+brew install n
+sudo n 8.10.0
+node --version
+which node
+```
+
+### Jenkins Script
+
+Update the PATH and preappend ```/usr/local/bin``` to it - so that ```yarn``` can be found by the Jenkins service when the build is executed
+
+```
+PATH=/usr/local/bin:$PATH
+echo $PATH
+yarn --version
+node --version
 yarn install
 yarn build
 ls -la
