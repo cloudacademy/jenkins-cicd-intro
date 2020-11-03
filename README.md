@@ -184,6 +184,9 @@ tree
 
 ## Demo 16: Build Pipelines - Declarative
 
+Refs
+https://github.com/cloudacademy/devops-webapp
+
 ```
 pipeline {
     agent {
